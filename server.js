@@ -7,6 +7,7 @@ const myPokemonRoutes = require("./routes/myPokemonRoutes");
 const caughtPokemonRoutes = require("./routes/caughtPokemonRoutes");
 const bagRoutes = require("./routes/bagRoutes");
 const pokedexRoutes = require("./routes/pokedexRoutes");
+const attackRoutes = require("./routes/attackRoutes");
 
 require("dotenv").config();
 
@@ -18,13 +19,9 @@ app.use("/pokemon", pokemonRoutes);
 app.use("/seenPokemon", seenPokemonRoutes);
 app.use("/myPokemon", myPokemonRoutes);
 app.use("/caught_pokemon", caughtPokemonRoutes);
-app.use("/bag", bagRoutes); // example: http://localhost:3000/bag/all, http://localhost:3000/bag/trainer/1, and: http://localhost:3000/bag/trainer/2
-app.use("/pokedex", pokedexRoutes); // example: host:3000/pokedex/all, http://localhost:3000/pokedex/evolutions/charmander, http://localhost:3000/pokedex/attacks/charmander
-
-// Define a simple route
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+app.use("/bag", bagRoutes); 
+app.use("/pokedex", pokedexRoutes);
+app.use("/attack", attackRoutes);
 
 // Start the server
 app.listen(port, () => {
