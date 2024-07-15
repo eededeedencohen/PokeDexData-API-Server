@@ -4,7 +4,7 @@ const port = 3000;
 const pokemonRoutes = require("./routes/pokemonRoutes");
 const seenPokemonRoutes = require("./routes/seenPokemonRoutes");
 const myPokemonRoutes = require("./routes/myPokemonRoutes");
-const myPokemonRoutes = require("./routes/myPokemonRoutes");
+const caughtPokemonRoutes = require("./routes/caughtPokemonRoutes");
 
 require("dotenv").config();
 
@@ -15,6 +15,7 @@ app.use(express.json());
 app.use("/pokemon", pokemonRoutes);
 app.use("/seenPokemon", seenPokemonRoutes);
 app.use("/myPokemon", myPokemonRoutes);
+app.use("/caught_pokemon", caughtPokemonRoutes);
 
 // Define a simple route
 app.get("/", (req, res) => {
