@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const pokemonRoutes = require("./routes/pokemonRoutes");
+const attackRoutes = require("./routes/attackRoutes");
 
 require("dotenv").config();
 
@@ -10,6 +11,7 @@ app.use(express.json());
 
 // Use the pokemon routes
 app.use("/pokemon", pokemonRoutes);
+app.use("/attack", attackRoutes);
 
 // Define a simple route
 app.get("/", (req, res) => {
